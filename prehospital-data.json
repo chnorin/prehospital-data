@@ -1,0 +1,710 @@
+{
+  "parameters": [
+    {
+      "key": "rr",
+      "label": "Andningsfrekvens",
+      "unit": "/min",
+      "nMin": 12,
+      "nMax": 16,
+      "cMin": 4,
+      "cMax": 60,
+      "dec": 0
+    },
+    {
+      "key": "spo2",
+      "label": "Saturation",
+      "unit": "%",
+      "nMin": 96,
+      "nMax": 99,
+      "cMin": 50,
+      "cMax": 100,
+      "dec": 0
+    },
+    {
+      "key": "hr",
+      "label": "Puls",
+      "unit": "/min",
+      "nMin": 60,
+      "nMax": 90,
+      "cMin": 20,
+      "cMax": 220,
+      "dec": 0
+    },
+    {
+      "key": "sbp",
+      "label": "Systoliskt BT",
+      "unit": "mmHg",
+      "nMin": 110,
+      "nMax": 140,
+      "cMin": 50,
+      "cMax": 260,
+      "dec": 0
+    },
+    {
+      "key": "dbp",
+      "label": "Diastoliskt BT",
+      "unit": "mmHg",
+      "nMin": 60,
+      "nMax": 90,
+      "cMin": 20,
+      "cMax": 160,
+      "dec": 0
+    },
+    {
+      "key": "temp",
+      "label": "Temperatur",
+      "unit": "°C",
+      "nMin": 36.5,
+      "nMax": 37.2,
+      "cMin": 32,
+      "cMax": 42,
+      "dec": 1
+    },
+    {
+      "key": "gcs",
+      "label": "GCS",
+      "unit": "",
+      "nMin": 15,
+      "nMax": 15,
+      "cMin": 3,
+      "cMax": 15,
+      "dec": 0
+    },
+    {
+      "key": "vas",
+      "label": "VAS-smärta",
+      "unit": "",
+      "nMin": 0,
+      "nMax": 0,
+      "cMin": 0,
+      "cMax": 10,
+      "dec": 0
+    },
+    {
+      "key": "illa",
+      "label": "Illamående",
+      "unit": "",
+      "nMin": 0,
+      "nMax": 0,
+      "cMin": 0,
+      "cMax": 10,
+      "dec": 0
+    },
+    {
+      "key": "glukos",
+      "label": "P-glukos",
+      "unit": "mmol/L",
+      "nMin": 4,
+      "nMax": 6,
+      "cMin": 1,
+      "cMax": 40,
+      "dec": 1
+    }
+  ],
+  "comorbidities": [
+    {
+      "id": "c_6fk2ps",
+      "name": "Obehandlad hypertoni",
+      "distractor": true,
+      "note": "Kronisk; höjer trycket.",
+      "mods": [
+        {
+          "key": "sbp",
+          "min": 25,
+          "max": 45
+        },
+        {
+          "key": "dbp",
+          "min": 10,
+          "max": 20
+        }
+      ]
+    },
+    {
+      "id": "c_5xy8r8",
+      "name": "KOL",
+      "distractor": false,
+      "note": "Lägre baslinjesaturation.",
+      "mods": [
+        {
+          "key": "spo2",
+          "min": -6,
+          "max": -2
+        },
+        {
+          "key": "rr",
+          "min": 2,
+          "max": 5
+        }
+      ]
+    },
+    {
+      "id": "c_mb0dpg",
+      "name": "Ångest",
+      "distractor": true,
+      "note": "Höjer puls och AF.",
+      "mods": [
+        {
+          "key": "hr",
+          "min": 10,
+          "max": 25
+        },
+        {
+          "key": "rr",
+          "min": 3,
+          "max": 6
+        }
+      ]
+    },
+    {
+      "id": "c_9c5em9",
+      "name": "Diabetes typ 2",
+      "distractor": true,
+      "note": "Höjer grundnivån av blodsocker.",
+      "mods": [
+        {
+          "key": "glukos",
+          "min": 2,
+          "max": 7
+        }
+      ]
+    }
+  ],
+  "dispatches": [
+    {
+      "id": "ut_jupvaw",
+      "name": "Bröstsmärta",
+      "kod": "3010",
+      "briefing": "Vuxen patient med central bröstsmärta sedan en stund. Anhörig på plats. Prio 1.",
+      "note": ""
+    },
+    {
+      "id": "ut_4eir1w",
+      "name": "Andningsbesvär",
+      "kod": "3020",
+      "briefing": "Vuxen patient med tilltagande andnöd. Prio 1.",
+      "note": ""
+    },
+    {
+      "id": "ut_ukkcdb",
+      "name": "Buksmärta",
+      "kod": "",
+      "briefing": "Vuxen patient med buksmärta sedan en tid.",
+      "note": "Sätt rätt utlarmningskod."
+    }
+  ],
+  "patients": [
+    {
+      "id": "pt_dg2r0y",
+      "name": "Erik",
+      "age": 68,
+      "sex": "man",
+      "weight": 82,
+      "note": "Rökare, stillasittande",
+      "comorbIds": [
+        "c_6fk2ps",
+        "c_5xy8r8"
+      ],
+      "o2sensitive": true,
+      "satTarget": 92
+    },
+    {
+      "id": "pt_e8eb7e",
+      "name": "Anna",
+      "age": 34,
+      "sex": "kvinna",
+      "weight": 64,
+      "note": "Tidigare frisk, p-piller",
+      "comorbIds": []
+    },
+    {
+      "id": "pt_8puede",
+      "name": "Ingrid",
+      "age": 58,
+      "sex": "kvinna",
+      "weight": 78,
+      "note": "Diabetes, lätt övervikt",
+      "comorbIds": [
+        "c_9c5em9"
+      ],
+      "o2sensitive": false
+    }
+  ],
+  "conditions": [
+    {
+      "id": "d_u1sanx",
+      "name": "Lungemboli",
+      "hiddenDx": "Lungemboli (PE)",
+      "system": "B",
+      "sevRange": {
+        "min": 0.35,
+        "max": 0.9
+      },
+      "rettsFloor": "",
+      "dispatchIds": [
+        "ut_jupvaw",
+        "ut_4eir1w"
+      ],
+      "overrides": [
+        {
+          "key": "spo2",
+          "min": 86,
+          "max": 92,
+          "sevMin": 0
+        },
+        {
+          "key": "rr",
+          "min": 24,
+          "max": 32,
+          "sevMin": 0
+        },
+        {
+          "key": "hr",
+          "min": 105,
+          "max": 130,
+          "sevMin": 0.4
+        },
+        {
+          "key": "vas",
+          "min": 3,
+          "max": 6,
+          "sevMin": 0.3
+        },
+        {
+          "key": "sbp",
+          "min": 80,
+          "max": 95,
+          "sevMin": 0.75
+        },
+        {
+          "key": "temp",
+          "min": 37.4,
+          "max": 38.2,
+          "sevMin": 0.5
+        }
+      ],
+      "findings": [
+        {
+          "abcde": "A",
+          "text": "Fri luftväg",
+          "by": "inspektion luftväg"
+        },
+        {
+          "abcde": "B",
+          "text": "Takypné, ytlig andning; andningsljud oftast normala",
+          "by": "auskultation lungor"
+        },
+        {
+          "abcde": "B",
+          "text": "Plötslig dyspné, ev. hosta, ev. hemoptys",
+          "by": "anamnes"
+        },
+        {
+          "abcde": "C",
+          "text": "Ensidig bensvullnad/ömhet (DVT)",
+          "by": "titta på benen"
+        },
+        {
+          "abcde": "R",
+          "text": "Immobilisering, malignitet, östrogen, tidigare VTE",
+          "by": "anamnes riskfaktorer"
+        }
+      ],
+      "prioNote": "",
+      "actions": "Oxygen mot målsaturation, venväg, smärtlindring v.b., transport i bekvämt läge",
+      "destination": "Akutmottagning",
+      "forvarning": "Förvarna vid cirkulatorisk påverkan",
+      "pitfalls": "Normalt SpO2 utesluter inte PE; leta riskfaktorer och ensidig bensvullnad",
+      "source": "Behandlingsriktlinjer Region Stockholm",
+      "reviewer": "",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "d_w1jn6q",
+      "name": "STEMI",
+      "hiddenDx": "ST-höjningsinfarkt (STEMI)",
+      "system": "C",
+      "sevRange": {
+        "min": 0.4,
+        "max": 0.9
+      },
+      "rettsFloor": "red",
+      "dispatchIds": [
+        "ut_jupvaw",
+        "ut_4eir1w",
+        "ut_ukkcdb"
+      ],
+      "overrides": [
+        {
+          "key": "vas",
+          "min": 6,
+          "max": 9,
+          "sevMin": 0
+        },
+        {
+          "key": "illa",
+          "min": 3,
+          "max": 7,
+          "sevMin": 0.3
+        },
+        {
+          "key": "hr",
+          "min": 95,
+          "max": 120,
+          "sevMin": 0.4
+        },
+        {
+          "key": "sbp",
+          "min": 95,
+          "max": 120,
+          "sevMin": 0.5
+        },
+        {
+          "key": "spo2",
+          "min": 92,
+          "max": 96,
+          "sevMin": 0.6
+        }
+      ],
+      "findings": [
+        {
+          "abcde": "A",
+          "text": "Fri luftväg",
+          "by": "inspektion luftväg"
+        },
+        {
+          "abcde": "B",
+          "text": "Lätt takypné, andningsljud normala",
+          "by": "auskultation lungor"
+        },
+        {
+          "abcde": "C",
+          "text": "Central tryckande bröstsmärta med utstrålning arm/käke",
+          "by": "anamnes"
+        },
+        {
+          "abcde": "C",
+          "text": "Kallsvettig, blek",
+          "by": "inspektion hud"
+        },
+        {
+          "abcde": "C",
+          "text": "ST-höjning på 12-avledningar",
+          "by": "12-avl EKG"
+        },
+        {
+          "abcde": "R",
+          "text": "Rökning, hypertoni, diabetes, hereditet",
+          "by": "anamnes riskfaktorer"
+        }
+      ],
+      "actions": "ASA, nitro (om ej kontraindikation), smärtlindring, syrgas vid hypoxi, 12-avl EKG, PCI-förvarning",
+      "destination": "PCI-lab / akutmottagning",
+      "forvarning": "PCI-förvarning tidigt",
+      "pitfalls": "Nitro försiktigt vid inferior infarkt/högerkammarpåverkan och lågt tryck",
+      "source": "Behandlingsriktlinjer Region Stockholm",
+      "reviewer": "",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "d_ik4jl8",
+      "name": "Ulcus",
+      "hiddenDx": "Ulcus",
+      "system": "C",
+      "sevRange": {
+        "min": 0.3,
+        "max": 0.8
+      },
+      "rettsFloor": "",
+      "overrides": [
+        {
+          "key": "hr",
+          "min": 10,
+          "max": 30,
+          "sevMin": 0.5
+        },
+        {
+          "key": "sbp",
+          "min": -5,
+          "max": -40,
+          "sevMin": 0.5
+        },
+        {
+          "key": "rr",
+          "min": 2,
+          "max": 6,
+          "sevMin": 0.75
+        },
+        {
+          "key": "spo2",
+          "min": -4,
+          "max": -10,
+          "sevMin": 0.8
+        },
+        {
+          "key": "illa",
+          "min": 0,
+          "max": 8,
+          "sevMin": 0.35
+        }
+      ],
+      "findings": [
+        {
+          "abcde": "R",
+          "text": "ömhet, smärta",
+          "by": "Palpation av buk"
+        }
+      ],
+      "actions": "PVK, Ringer Acetat",
+      "destination": "",
+      "forvarning": "",
+      "pitfalls": "",
+      "source": "",
+      "reviewer": "",
+      "version": "utkast 0.1",
+      "dispatchIds": [
+        "ut_jupvaw",
+        "ut_ukkcdb"
+      ]
+    }
+  ],
+  "interventions": [
+    {
+      "id": "iv_qwu88p",
+      "name": "Morfin",
+      "route": "i.v.",
+      "unitLabel": "mg",
+      "recommendedDose": 10,
+      "maxDose": 20,
+      "step": 2.5,
+      "therapeutic": [
+        {
+          "key": "vas",
+          "min": -4,
+          "max": -2
+        },
+        {
+          "key": "sbp",
+          "min": -12,
+          "max": -5
+        }
+      ],
+      "adverse": [
+        {
+          "key": "rr",
+          "min": -10,
+          "max": -6,
+          "label": "andningsdepression"
+        },
+        {
+          "key": "gcs",
+          "min": -4,
+          "max": -2,
+          "label": "sedering"
+        },
+        {
+          "key": "sbp",
+          "min": -30,
+          "max": -15,
+          "label": "hypotoni"
+        }
+      ],
+      "note": "Titreras till smärtfrihet. Riktlinje: 2,5 ml (1 mg/ml) i.v., upprepas till max 20 ml.",
+      "source": "Behandlingsriktlinjer Region Stockholm",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_pstofb",
+      "name": "Oxygen",
+      "route": "mask",
+      "unitLabel": "L/min",
+      "recommendedDose": 10,
+      "maxDose": 15,
+      "step": 5,
+      "therapeutic": [
+        {
+          "key": "spo2",
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "adverse": [],
+      "note": "Titrera mot målsaturation. OBS koldioxidretinerare med målsat 88–92 – översaturering kan sänka medvetandet.",
+      "source": "Behandlingsriktlinjer Region Stockholm",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_jn4aus",
+      "name": "Antiemetika",
+      "route": "i.v.",
+      "unitLabel": "mg",
+      "recommendedDose": 1,
+      "maxDose": 1,
+      "step": 1,
+      "therapeutic": [
+        {
+          "key": "illa",
+          "min": -1,
+          "max": -5
+        }
+      ],
+      "adverse": [],
+      "note": "",
+      "source": "",
+      "version": "utkast 0.1"
+    }
+  ],
+  "retts": {
+    "prioRegel": "röd = Prio 1, alla andra färger (orange/gul/grön) = Prio 2",
+    "prio": {
+      "red": 1,
+      "orange": 2,
+      "yellow": 2,
+      "green": 2
+    },
+    "bands": {
+      "rr": [
+        {
+          "color": "red",
+          "min": null,
+          "max": 7
+        },
+        {
+          "color": "green",
+          "min": 8,
+          "max": 25
+        },
+        {
+          "color": "orange",
+          "min": 26,
+          "max": 30
+        },
+        {
+          "color": "red",
+          "min": 31,
+          "max": null
+        }
+      ],
+      "spo2": [
+        {
+          "color": "red",
+          "min": null,
+          "max": 87
+        },
+        {
+          "color": "orange",
+          "min": 88,
+          "max": 90
+        },
+        {
+          "color": "yellow",
+          "min": 91,
+          "max": 94
+        },
+        {
+          "color": "green",
+          "min": 95,
+          "max": null
+        }
+      ],
+      "hr": [
+        {
+          "color": "red",
+          "min": null,
+          "max": 29
+        },
+        {
+          "color": "orange",
+          "min": 30,
+          "max": 39
+        },
+        {
+          "color": "yellow",
+          "min": 40,
+          "max": 49
+        },
+        {
+          "color": "green",
+          "min": 50,
+          "max": 110
+        },
+        {
+          "color": "yellow",
+          "min": 111,
+          "max": 120
+        },
+        {
+          "color": "orange",
+          "min": 121,
+          "max": 130
+        },
+        {
+          "color": "red",
+          "min": 131,
+          "max": null
+        }
+      ],
+      "sbp": [
+        {
+          "color": "red",
+          "min": null,
+          "max": 89
+        },
+        {
+          "color": "green",
+          "min": 90,
+          "max": null
+        }
+      ],
+      "temp": [
+        {
+          "color": "red",
+          "min": null,
+          "max": 31.9
+        },
+        {
+          "color": "orange",
+          "min": 32,
+          "max": 34.9
+        },
+        {
+          "color": "green",
+          "min": 35,
+          "max": 38.5
+        },
+        {
+          "color": "yellow",
+          "min": 38.6,
+          "max": 41
+        },
+        {
+          "color": "orange",
+          "min": 41.1,
+          "max": null
+        }
+      ],
+      "gcs": [
+        {
+          "color": "red",
+          "min": 3,
+          "max": 9
+        },
+        {
+          "color": "orange",
+          "min": 10,
+          "max": 13
+        },
+        {
+          "color": "yellow",
+          "min": 14,
+          "max": 14
+        },
+        {
+          "color": "green",
+          "min": 15,
+          "max": 15
+        }
+      ]
+    }
+  }
+}

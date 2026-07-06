@@ -44,6 +44,14 @@
       "flyttade nyligen",
       "varit sjukhusinlagd för en månad sedan",
       "inget särskilt nyligen"
+    ],
+    "personlighet": [
+      "konfrontativ – ifrågasätter allt, kräver att bli tagen på allvar",
+      "ledsen – gråtfärdig, svarar kort och tyst",
+      "orolig – pratig, ställer många motfrågor, katastroftänker",
+      "tillbakadragen – korta svar, ovillig att öppna sig",
+      "misstänksam – vill veta varför du frågar allt",
+      "lugn och samarbetsvillig – svarar rakt på sak"
     ]
   },
   "parameters": [
@@ -150,7 +158,7 @@
   ],
   "comorbidities": [
     {
-      "id": "c_l75yye",
+      "id": "c_brzyzo",
       "name": "Obehandlad hypertoni",
       "distractor": true,
       "note": "Kronisk; höjer trycket.",
@@ -168,7 +176,7 @@
       ]
     },
     {
-      "id": "c_kajh6e",
+      "id": "c_j1nzzp",
       "name": "KOL",
       "distractor": false,
       "note": "Lägre baslinjesaturation.",
@@ -186,7 +194,7 @@
       ]
     },
     {
-      "id": "c_qn7xyt",
+      "id": "c_q73mv4",
       "name": "Ångest",
       "distractor": true,
       "note": "Höjer puls och AF.",
@@ -204,7 +212,7 @@
       ]
     },
     {
-      "id": "c_mispt2",
+      "id": "c_l0s7ke",
       "name": "Diabetes typ 2",
       "distractor": true,
       "note": "Höjer grundnivån av blodsocker.",
@@ -219,21 +227,21 @@
   ],
   "dispatches": [
     {
-      "id": "ut_086si4",
+      "id": "ut_0wqxfu",
       "name": "Bröstsmärta",
       "kod": "3010",
       "briefing": "Vuxen patient med central bröstsmärta sedan en stund. Anhörig på plats. Prio 1.",
       "note": ""
     },
     {
-      "id": "ut_lcbmt2",
+      "id": "ut_jynf0u",
       "name": "Andningsbesvär",
       "kod": "3020",
       "briefing": "Vuxen patient med tilltagande andnöd. Prio 1.",
       "note": ""
     },
     {
-      "id": "ut_ic7x7j",
+      "id": "ut_eybl7c",
       "name": "Buksmärta",
       "kod": "",
       "briefing": "Vuxen patient med buksmärta sedan en tid.",
@@ -242,21 +250,21 @@
   ],
   "patients": [
     {
-      "id": "pt_ntvtq6",
+      "id": "pt_3ayp5l",
       "name": "Erik",
       "age": 68,
       "sex": "man",
       "weight": 82,
       "note": "Rökare, stillasittande",
       "comorbIds": [
-        "c_l75yye",
-        "c_kajh6e"
+        "c_brzyzo",
+        "c_j1nzzp"
       ],
       "o2sensitive": true,
       "satTarget": 92
     },
     {
-      "id": "pt_6kxfap",
+      "id": "pt_yseycr",
       "name": "Anna",
       "age": 34,
       "sex": "kvinna",
@@ -265,21 +273,21 @@
       "comorbIds": []
     },
     {
-      "id": "pt_7f6crg",
+      "id": "pt_ni55o1",
       "name": "Ingrid",
       "age": 58,
       "sex": "kvinna",
       "weight": 78,
       "note": "Diabetes, lätt övervikt",
       "comorbIds": [
-        "c_mispt2"
+        "c_l0s7ke"
       ],
       "o2sensitive": false
     }
   ],
   "conditions": [
     {
-      "id": "d_mrz55r",
+      "id": "d_4c1o1o",
       "name": "Lungemboli",
       "hiddenDx": "Lungemboli (PE)",
       "system": "B",
@@ -289,8 +297,8 @@
       },
       "rettsFloor": "",
       "dispatchIds": [
-        "ut_086si4",
-        "ut_lcbmt2"
+        "ut_0wqxfu",
+        "ut_jynf0u"
       ],
       "overrides": [
         {
@@ -367,7 +375,7 @@
       "version": "utkast 0.1"
     },
     {
-      "id": "d_tfxvcx",
+      "id": "d_qz94w3",
       "name": "STEMI",
       "hiddenDx": "ST-höjningsinfarkt (STEMI)",
       "system": "C",
@@ -377,7 +385,7 @@
       },
       "rettsFloor": "red",
       "dispatchIds": [
-        "ut_086si4"
+        "ut_0wqxfu"
       ],
       "overrides": [
         {
@@ -454,7 +462,7 @@
   ],
   "interventions": [
     {
-      "id": "iv_0tvewn",
+      "id": "iv_vt3usg",
       "name": "Morfin",
       "route": "i.v.",
       "unitLabel": "mg",
@@ -498,7 +506,7 @@
       "version": "utkast 0.1"
     },
     {
-      "id": "iv_vk83r2",
+      "id": "iv_pixu7d",
       "name": "Oxygen",
       "route": "mask",
       "unitLabel": "L/min",

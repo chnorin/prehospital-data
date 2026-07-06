@@ -1,4 +1,51 @@
 {
+  "background": {
+    "yrke": [
+      "målare",
+      "lärare",
+      "lastbilschaufför",
+      "sjuksköterska",
+      "pensionär",
+      "student",
+      "kock",
+      "ekonom",
+      "elektriker",
+      "frisör"
+    ],
+    "familj": [
+      "gift, två barn",
+      "ensamboende",
+      "sambo, inga barn",
+      "änka/änkling",
+      "nyskild",
+      "bor hos barnen",
+      "stor familj, många släktingar i närheten"
+    ],
+    "bostad": [
+      "villa i förorten",
+      "lägenhet i city",
+      "radhus",
+      "äldreboende",
+      "lantgård utanför stan",
+      "hyresrätt, tredje våningen utan hiss"
+    ],
+    "vanor": [
+      "rökare",
+      "icke-rökare, motionerar regelbundet",
+      "dricker alkohol i helgerna",
+      "nykterist",
+      "stillasittande jobb",
+      "fysiskt tungt jobb"
+    ],
+    "nyligen": [
+      "resa till Grekland för tre veckor sedan",
+      "ingen resa på länge",
+      "nyligen opererad i knät",
+      "flyttade nyligen",
+      "varit sjukhusinlagd för en månad sedan",
+      "inget särskilt nyligen"
+    ]
+  },
   "parameters": [
     {
       "key": "rr",
@@ -103,7 +150,7 @@
   ],
   "comorbidities": [
     {
-      "id": "c_6fk2ps",
+      "id": "c_l75yye",
       "name": "Obehandlad hypertoni",
       "distractor": true,
       "note": "Kronisk; höjer trycket.",
@@ -121,7 +168,7 @@
       ]
     },
     {
-      "id": "c_5xy8r8",
+      "id": "c_kajh6e",
       "name": "KOL",
       "distractor": false,
       "note": "Lägre baslinjesaturation.",
@@ -139,7 +186,7 @@
       ]
     },
     {
-      "id": "c_mb0dpg",
+      "id": "c_qn7xyt",
       "name": "Ångest",
       "distractor": true,
       "note": "Höjer puls och AF.",
@@ -157,7 +204,7 @@
       ]
     },
     {
-      "id": "c_9c5em9",
+      "id": "c_mispt2",
       "name": "Diabetes typ 2",
       "distractor": true,
       "note": "Höjer grundnivån av blodsocker.",
@@ -172,21 +219,21 @@
   ],
   "dispatches": [
     {
-      "id": "ut_jupvaw",
+      "id": "ut_086si4",
       "name": "Bröstsmärta",
       "kod": "3010",
       "briefing": "Vuxen patient med central bröstsmärta sedan en stund. Anhörig på plats. Prio 1.",
       "note": ""
     },
     {
-      "id": "ut_4eir1w",
+      "id": "ut_lcbmt2",
       "name": "Andningsbesvär",
       "kod": "3020",
       "briefing": "Vuxen patient med tilltagande andnöd. Prio 1.",
       "note": ""
     },
     {
-      "id": "ut_ukkcdb",
+      "id": "ut_ic7x7j",
       "name": "Buksmärta",
       "kod": "",
       "briefing": "Vuxen patient med buksmärta sedan en tid.",
@@ -195,21 +242,21 @@
   ],
   "patients": [
     {
-      "id": "pt_dg2r0y",
+      "id": "pt_ntvtq6",
       "name": "Erik",
       "age": 68,
       "sex": "man",
       "weight": 82,
       "note": "Rökare, stillasittande",
       "comorbIds": [
-        "c_6fk2ps",
-        "c_5xy8r8"
+        "c_l75yye",
+        "c_kajh6e"
       ],
       "o2sensitive": true,
       "satTarget": 92
     },
     {
-      "id": "pt_e8eb7e",
+      "id": "pt_6kxfap",
       "name": "Anna",
       "age": 34,
       "sex": "kvinna",
@@ -218,21 +265,21 @@
       "comorbIds": []
     },
     {
-      "id": "pt_8puede",
+      "id": "pt_7f6crg",
       "name": "Ingrid",
       "age": 58,
       "sex": "kvinna",
       "weight": 78,
       "note": "Diabetes, lätt övervikt",
       "comorbIds": [
-        "c_9c5em9"
+        "c_mispt2"
       ],
       "o2sensitive": false
     }
   ],
   "conditions": [
     {
-      "id": "d_u1sanx",
+      "id": "d_mrz55r",
       "name": "Lungemboli",
       "hiddenDx": "Lungemboli (PE)",
       "system": "B",
@@ -242,8 +289,8 @@
       },
       "rettsFloor": "",
       "dispatchIds": [
-        "ut_jupvaw",
-        "ut_4eir1w"
+        "ut_086si4",
+        "ut_lcbmt2"
       ],
       "overrides": [
         {
@@ -320,7 +367,7 @@
       "version": "utkast 0.1"
     },
     {
-      "id": "d_w1jn6q",
+      "id": "d_tfxvcx",
       "name": "STEMI",
       "hiddenDx": "ST-höjningsinfarkt (STEMI)",
       "system": "C",
@@ -330,9 +377,7 @@
       },
       "rettsFloor": "red",
       "dispatchIds": [
-        "ut_jupvaw",
-        "ut_4eir1w",
-        "ut_ukkcdb"
+        "ut_086si4"
       ],
       "overrides": [
         {
@@ -405,72 +450,11 @@
       "source": "Behandlingsriktlinjer Region Stockholm",
       "reviewer": "",
       "version": "utkast 0.1"
-    },
-    {
-      "id": "d_ik4jl8",
-      "name": "Ulcus",
-      "hiddenDx": "Ulcus",
-      "system": "C",
-      "sevRange": {
-        "min": 0.3,
-        "max": 0.8
-      },
-      "rettsFloor": "",
-      "overrides": [
-        {
-          "key": "hr",
-          "min": 10,
-          "max": 30,
-          "sevMin": 0.5
-        },
-        {
-          "key": "sbp",
-          "min": -5,
-          "max": -40,
-          "sevMin": 0.5
-        },
-        {
-          "key": "rr",
-          "min": 2,
-          "max": 6,
-          "sevMin": 0.75
-        },
-        {
-          "key": "spo2",
-          "min": -4,
-          "max": -10,
-          "sevMin": 0.8
-        },
-        {
-          "key": "illa",
-          "min": 0,
-          "max": 8,
-          "sevMin": 0.35
-        }
-      ],
-      "findings": [
-        {
-          "abcde": "R",
-          "text": "ömhet, smärta",
-          "by": "Palpation av buk"
-        }
-      ],
-      "actions": "PVK, Ringer Acetat",
-      "destination": "",
-      "forvarning": "",
-      "pitfalls": "",
-      "source": "",
-      "reviewer": "",
-      "version": "utkast 0.1",
-      "dispatchIds": [
-        "ut_jupvaw",
-        "ut_ukkcdb"
-      ]
     }
   ],
   "interventions": [
     {
-      "id": "iv_qwu88p",
+      "id": "iv_0tvewn",
       "name": "Morfin",
       "route": "i.v.",
       "unitLabel": "mg",
@@ -514,7 +498,7 @@
       "version": "utkast 0.1"
     },
     {
-      "id": "iv_pstofb",
+      "id": "iv_vk83r2",
       "name": "Oxygen",
       "route": "mask",
       "unitLabel": "L/min",
@@ -531,26 +515,6 @@
       "adverse": [],
       "note": "Titrera mot målsaturation. OBS koldioxidretinerare med målsat 88–92 – översaturering kan sänka medvetandet.",
       "source": "Behandlingsriktlinjer Region Stockholm",
-      "version": "utkast 0.1"
-    },
-    {
-      "id": "iv_jn4aus",
-      "name": "Antiemetika",
-      "route": "i.v.",
-      "unitLabel": "mg",
-      "recommendedDose": 1,
-      "maxDose": 1,
-      "step": 1,
-      "therapeutic": [
-        {
-          "key": "illa",
-          "min": -1,
-          "max": -5
-        }
-      ],
-      "adverse": [],
-      "note": "",
-      "source": "",
       "version": "utkast 0.1"
     }
   ],

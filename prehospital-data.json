@@ -52,8 +52,26 @@
       "tillbakadragen – korta svar, ovillig att öppna sig",
       "misstänksam – vill veta varför du frågar allt",
       "lugn och samarbetsvillig – svarar rakt på sak"
+    ],
+    "aktivitet": [
+      "vid vila i soffan",
+      "under en promenad",
+      "vid uppvaknandet i morse",
+      "strax efter en måltid",
+      "mitt i natten",
+      "under lätt ansträngning i trädgården",
+      "under arbetet",
+      "medan hen såg på tv"
     ]
   },
+  "ekgTypes": [
+    "Sinusrytm",
+    "ST-höjning",
+    "ST-sänkning",
+    "Förmaksflimmer",
+    "Förmaksfladder",
+    "VT"
+  ],
   "parameters": [
     {
       "key": "rr",
@@ -158,7 +176,7 @@
   ],
   "comorbidities": [
     {
-      "id": "c_brzyzo",
+      "id": "c_ps1w8i",
       "name": "Obehandlad hypertoni",
       "distractor": true,
       "note": "Kronisk; höjer trycket.",
@@ -176,7 +194,7 @@
       ]
     },
     {
-      "id": "c_j1nzzp",
+      "id": "c_mhspiu",
       "name": "KOL",
       "distractor": false,
       "note": "Lägre baslinjesaturation.",
@@ -194,7 +212,7 @@
       ]
     },
     {
-      "id": "c_q73mv4",
+      "id": "c_ktrzu5",
       "name": "Ångest",
       "distractor": true,
       "note": "Höjer puls och AF.",
@@ -212,7 +230,7 @@
       ]
     },
     {
-      "id": "c_l0s7ke",
+      "id": "c_rqfou9",
       "name": "Diabetes typ 2",
       "distractor": true,
       "note": "Höjer grundnivån av blodsocker.",
@@ -223,71 +241,109 @@
           "max": 7
         }
       ]
+    },
+    {
+      "id": "c_33oym5",
+      "name": "Addisons sjukdom",
+      "distractor": false,
+      "note": "Primär binjurebarksvikt/kortisolsvikt. Något lägre baslinjetryck; sårbar för kris vid stress/infektion.",
+      "mods": [
+        {
+          "key": "sbp",
+          "min": -15,
+          "max": -5
+        }
+      ],
+      "ekg": ""
+    },
+    {
+      "id": "c_432ae7",
+      "name": "Förmaksflimmer",
+      "distractor": false,
+      "note": "Oregelbunden kammarrytm; höjer vilopulsen relativt baslinjen.",
+      "mods": [
+        {
+          "key": "hr",
+          "min": 20,
+          "max": 50
+        }
+      ],
+      "ekg": "Förmaksflimmer"
     }
   ],
   "dispatches": [
     {
-      "id": "ut_0wqxfu",
+      "id": "ut_apxtpg",
       "name": "Bröstsmärta",
       "kod": "3010",
       "briefing": "Vuxen patient med central bröstsmärta sedan en stund. Anhörig på plats. Prio 1.",
       "note": ""
     },
     {
-      "id": "ut_jynf0u",
+      "id": "ut_d13x83",
       "name": "Andningsbesvär",
       "kod": "3020",
       "briefing": "Vuxen patient med tilltagande andnöd. Prio 1.",
       "note": ""
     },
     {
-      "id": "ut_eybl7c",
+      "id": "ut_nrr0jx",
       "name": "Buksmärta",
       "kod": "",
       "briefing": "Vuxen patient med buksmärta sedan en tid.",
       "note": "Sätt rätt utlarmningskod."
+    },
+    {
+      "id": "ut_3oi4q4",
+      "name": "Medvetandesänkning",
+      "briefing": "Vuxen patient med sänkt medvetande, svårväckt. Anhörig/förbipasserande på plats.",
+      "note": ""
     }
   ],
   "patients": [
     {
-      "id": "pt_3ayp5l",
+      "id": "pt_gb14cf",
       "name": "Erik",
       "age": 68,
       "sex": "man",
       "weight": 82,
       "note": "Rökare, stillasittande",
       "comorbIds": [
-        "c_brzyzo",
-        "c_j1nzzp"
+        "c_ps1w8i",
+        "c_mhspiu"
       ],
       "o2sensitive": true,
-      "satTarget": 92
+      "satTarget": 92,
+      "pins": {
+        "vanor": "rökare"
+      }
     },
     {
-      "id": "pt_yseycr",
+      "id": "pt_xll31y",
       "name": "Anna",
       "age": 34,
       "sex": "kvinna",
       "weight": 64,
       "note": "Tidigare frisk, p-piller",
-      "comorbIds": []
+      "comorbIds": [],
+      "pins": {}
     },
     {
-      "id": "pt_ni55o1",
+      "id": "pt_rlrcmx",
       "name": "Ingrid",
       "age": 58,
       "sex": "kvinna",
       "weight": 78,
       "note": "Diabetes, lätt övervikt",
       "comorbIds": [
-        "c_l0s7ke"
+        "c_rqfou9"
       ],
       "o2sensitive": false
     }
   ],
   "conditions": [
     {
-      "id": "d_4c1o1o",
+      "id": "d_cb8uhd",
       "name": "Lungemboli",
       "hiddenDx": "Lungemboli (PE)",
       "system": "B",
@@ -297,8 +353,16 @@
       },
       "rettsFloor": "",
       "dispatchIds": [
-        "ut_0wqxfu",
-        "ut_jynf0u"
+        "ut_apxtpg",
+        "ut_d13x83"
+      ],
+      "debut": {
+        "min": 60,
+        "max": 600
+      },
+      "briefingTemplates": [
+        "{namn}, {ålder} år, fick plötslig andnöd {aktivitet}, {sedan}. {hanhon} är andfådd redan i vila.",
+        "Tilltagande andfåddhet {sedan}. {namn}, {ålder} år, klagar på stickande bröstsmärta vid djupandning."
       ],
       "overrides": [
         {
@@ -372,10 +436,11 @@
       "pitfalls": "Normalt SpO2 utesluter inte PE; leta riskfaktorer och ensidig bensvullnad",
       "source": "Behandlingsriktlinjer Region Stockholm",
       "reviewer": "",
-      "version": "utkast 0.1"
+      "version": "utkast 0.1",
+      "ekgFindings": []
     },
     {
-      "id": "d_qz94w3",
+      "id": "d_imvirg",
       "name": "STEMI",
       "hiddenDx": "ST-höjningsinfarkt (STEMI)",
       "system": "C",
@@ -385,7 +450,15 @@
       },
       "rettsFloor": "red",
       "dispatchIds": [
-        "ut_0wqxfu"
+        "ut_apxtpg"
+      ],
+      "debut": {
+        "min": 20,
+        "max": 90
+      },
+      "briefingTemplates": [
+        "Centralt tryck över bröstet som kom {aktivitet}, {sedan}. Strålar ut i vänster arm. {namn}, {ålder} år, är blek och kallsvettig.",
+        "{namn}, {ålder} år, fick plötslig bröstsmärta {aktivitet} vid {tid}. Smärtan sitter kvar och {hanhon} mår illa."
       ],
       "overrides": [
         {
@@ -457,12 +530,108 @@
       "pitfalls": "Nitro försiktigt vid inferior infarkt/högerkammarpåverkan och lågt tryck",
       "source": "Behandlingsriktlinjer Region Stockholm",
       "reviewer": "",
+      "version": "utkast 0.1",
+      "ekgFindings": []
+    },
+    {
+      "id": "d_kzn41y",
+      "name": "Addisonkris",
+      "hiddenDx": "Akut binjurebarksvikt (Addisonkris)",
+      "system": "C",
+      "sevRange": {
+        "min": 0.4,
+        "max": 0.9
+      },
+      "rettsFloor": "",
+      "dispatchIds": [
+        "ut_3oi4q4"
+      ],
+      "debut": {
+        "min": 360,
+        "max": 2880
+      },
+      "briefingTemplates": [
+        "{namn}, {ålder} år, har blivit alltmer hängig {sedan} – trött, illamående och kräkningar. {hanhon} är nu svårväckt och slö.",
+        "Anhörig larmar: {namn} har mått dåligt {sedan}, kräkts flera gånger och blivit alltmer förvirrad. Började {aktivitet}."
+      ],
+      "overrides": [
+        {
+          "key": "sbp",
+          "min": 70,
+          "max": 95,
+          "sevMin": 0
+        },
+        {
+          "key": "hr",
+          "min": 100,
+          "max": 125,
+          "sevMin": 0.3
+        },
+        {
+          "key": "gcs",
+          "min": 11,
+          "max": 14,
+          "sevMin": 0.4
+        },
+        {
+          "key": "illa",
+          "min": 4,
+          "max": 8,
+          "sevMin": 0.2
+        },
+        {
+          "key": "temp",
+          "min": 37.5,
+          "max": 38.5,
+          "sevMin": 0.5
+        },
+        {
+          "key": "glukos",
+          "min": 2.5,
+          "max": 3.8,
+          "sevMin": 0.5
+        }
+      ],
+      "findings": [
+        {
+          "abcde": "A",
+          "text": "Fri luftväg",
+          "by": "inspektion luftväg"
+        },
+        {
+          "abcde": "C",
+          "text": "Hypotoni, blek/gråblek, kladdig hud",
+          "by": "BT + inspektion hud"
+        },
+        {
+          "abcde": "D",
+          "text": "Slö, förvirrad, tilltagande medvetandesänkning",
+          "by": "medvetandebedömning"
+        },
+        {
+          "abcde": "E",
+          "text": "Illamående/kräkning, buksmärta; ev. hyperpigmentering",
+          "by": "anamnes + inspektion"
+        },
+        {
+          "abcde": "R",
+          "text": "Känd Addison/kortisonbehandling, aktuell infektion, missad kortisondos",
+          "by": "anamnes riskfaktorer"
+        }
+      ],
+      "ekgFindings": [],
+      "actions": "Hydrokortison 100 mg iv/im utan fördröjning + Ringer-acetat bolus, syrgas v.b., transport i planläge, förvarna",
+      "destination": "Akutmottagning",
+      "forvarning": "Förvarna vid cirkulatorisk svikt/medvetandesänkning",
+      "pitfalls": "Ge inte bara vätska – kortisolsvikt kräver hydrokortison. Krisen kan vara debut vid odiagnosticerad Addison.",
+      "source": "Behandlingsriktlinjer Region Stockholm 5.1",
+      "reviewer": "",
       "version": "utkast 0.1"
     }
   ],
   "interventions": [
     {
-      "id": "iv_vt3usg",
+      "id": "iv_f1dvd6",
       "name": "Morfin",
       "route": "i.v.",
       "unitLabel": "mg",
@@ -506,7 +675,7 @@
       "version": "utkast 0.1"
     },
     {
-      "id": "iv_pixu7d",
+      "id": "iv_6vrvk6",
       "name": "Oxygen",
       "route": "mask",
       "unitLabel": "L/min",
@@ -523,6 +692,301 @@
       "adverse": [],
       "note": "Titrera mot målsaturation. OBS koldioxidretinerare med målsat 88–92 – översaturering kan sänka medvetandet.",
       "source": "Behandlingsriktlinjer Region Stockholm",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_b24brv",
+      "name": "Ringer-Acetat",
+      "route": "i.v.",
+      "unitLabel": "ml",
+      "recommendedDose": 500,
+      "maxDose": 1000,
+      "step": 250,
+      "therapeutic": [
+        {
+          "key": "sbp",
+          "min": 8,
+          "max": 20
+        },
+        {
+          "key": "hr",
+          "min": -12,
+          "max": -4
+        }
+      ],
+      "adverse": [
+        {
+          "key": "spo2",
+          "min": -6,
+          "max": -2,
+          "label": "övervätskning/lungödem"
+        },
+        {
+          "key": "rr",
+          "min": 2,
+          "max": 5,
+          "label": "lungödem"
+        }
+      ],
+      "note": "Bolus 10 ml/kg iv, titreras mot klinik. Försiktighet vid hjärtsvikt/njursvikt/ödem.",
+      "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_jfsl9o",
+      "name": "Ondansetron",
+      "route": "i.v.",
+      "unitLabel": "mg",
+      "recommendedDose": 4,
+      "maxDose": 8,
+      "step": 4,
+      "therapeutic": [
+        {
+          "key": "illa",
+          "min": -6,
+          "max": -3
+        }
+      ],
+      "adverse": [
+        {
+          "key": "sbp",
+          "min": -15,
+          "max": -6,
+          "label": "hypotension (överdos)"
+        }
+      ],
+      "note": "2 mg/ml, 2 ml iv (=4 mg). Försiktighet vid långt QT-syndrom (arytmirisk).",
+      "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_fgorpn",
+      "name": "Glyceryltrinitrat (Nitrolingual)",
+      "route": "sublingualt",
+      "unitLabel": "dos",
+      "recommendedDose": 1,
+      "maxDose": 2,
+      "step": 1,
+      "therapeutic": [
+        {
+          "key": "sbp",
+          "min": -20,
+          "max": -8
+        },
+        {
+          "key": "vas",
+          "min": -3,
+          "max": -1
+        }
+      ],
+      "adverse": [
+        {
+          "key": "sbp",
+          "min": -40,
+          "max": -20,
+          "label": "kraftig hypotoni"
+        },
+        {
+          "key": "hr",
+          "min": 8,
+          "max": 20,
+          "label": "reflextakykardi"
+        }
+      ],
+      "note": "0,4 mg/dos sublingualt, 1 dos, kan upprepas om syst BT tillåter. Kontra: PDE5-hämmare senaste dygnet, hypotoni.",
+      "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_fjwl50",
+      "name": "Heparin",
+      "route": "i.v.",
+      "unitLabel": "IE",
+      "recommendedDose": 5000,
+      "maxDose": 5000,
+      "step": 5000,
+      "therapeutic": [],
+      "adverse": [
+        {
+          "key": "sbp",
+          "min": -20,
+          "max": -8,
+          "label": "blödning (vid ockult blödning)"
+        }
+      ],
+      "note": "5000 IE iv, ENDAST på läkarordination vid bekräftad STEMI→PCI. Kontra: aktiv blödning, heparinöverkänslighet.",
+      "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_gzlnvn",
+      "name": "Acetylsalicylsyra",
+      "route": "p.o.",
+      "unitLabel": "mg",
+      "recommendedDose": 320,
+      "maxDose": 500,
+      "step": 160,
+      "therapeutic": [],
+      "adverse": [
+        {
+          "key": "rr",
+          "min": 3,
+          "max": 8,
+          "label": "bronkospasm vid ASA-överkänslighet"
+        },
+        {
+          "key": "spo2",
+          "min": -5,
+          "max": -2,
+          "label": "bronkospasm"
+        }
+      ],
+      "note": "320–500 mg po vid bekräftad PCI-destination. Kontra: aktivt magsår, astma/urtikaria efter ASA/NSAID.",
+      "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_gad0ze",
+      "name": "Hydrokortison (Solu-Cortef)",
+      "route": "i.v./i.m.",
+      "unitLabel": "mg",
+      "recommendedDose": 100,
+      "maxDose": 100,
+      "step": 100,
+      "therapeutic": [
+        {
+          "key": "sbp",
+          "min": 8,
+          "max": 20
+        },
+        {
+          "key": "gcs",
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "adverse": [
+        {
+          "key": "glukos",
+          "min": 1,
+          "max": 3,
+          "label": "hyperglykemi"
+        }
+      ],
+      "note": "100 mg iv/im utan fördröjning (im endast utan venväg) + Ringer. Indikation Addisonkris. Effekten kommer gradvis.",
+      "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_ub2f0j",
+      "name": "Naloxon",
+      "route": "i.v.",
+      "unitLabel": "mg",
+      "recommendedDose": 0.4,
+      "maxDose": 0.8,
+      "step": 0.4,
+      "therapeutic": [
+        {
+          "key": "rr",
+          "min": 4,
+          "max": 10
+        },
+        {
+          "key": "gcs",
+          "min": 3,
+          "max": 6
+        },
+        {
+          "key": "spo2",
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "adverse": [
+        {
+          "key": "hr",
+          "min": 10,
+          "max": 25,
+          "label": "akut abstinens/takykardi"
+        },
+        {
+          "key": "illa",
+          "min": 3,
+          "max": 6,
+          "label": "abstinens/illamående"
+        },
+        {
+          "key": "sbp",
+          "min": 8,
+          "max": 20,
+          "label": "hypertoni"
+        }
+      ],
+      "note": "0,4 mg/ml, titrera till adekvat andning. Effekt inom ~2 min iv. OBS kortare halveringstid än opioider → re-narkotisering.",
+      "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_pj9iyc",
+      "name": "Ipratropium (Atrovent)",
+      "route": "inhalation",
+      "unitLabel": "ml",
+      "recommendedDose": 2,
+      "maxDose": 2,
+      "step": 1,
+      "therapeutic": [
+        {
+          "key": "spo2",
+          "min": 2,
+          "max": 5
+        },
+        {
+          "key": "rr",
+          "min": -4,
+          "max": -1
+        }
+      ],
+      "adverse": [],
+      "note": "0,25 mg/ml, 2 ml i nebulisator (blandbar med salbutamol). Additiv bronkdilatation.",
+      "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_a7itmo",
+      "name": "Salbutamol (Ventoline)",
+      "route": "inhalation",
+      "unitLabel": "ml",
+      "recommendedDose": 5,
+      "maxDose": 5,
+      "step": 1,
+      "therapeutic": [
+        {
+          "key": "spo2",
+          "min": 3,
+          "max": 7
+        },
+        {
+          "key": "rr",
+          "min": -6,
+          "max": -2
+        }
+      ],
+      "adverse": [
+        {
+          "key": "hr",
+          "min": 12,
+          "max": 30,
+          "label": "takykardi/palpitationer"
+        },
+        {
+          "key": "glukos",
+          "min": 1,
+          "max": 3,
+          "label": "hyperglykemi"
+        }
+      ],
+      "note": "OBS Stockholm-styrka 2 mg/ml, 5 ml (=10 mg) i nebulisator, ofta med ipratropium. Kan upprepas efter 10–20 min.",
+      "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
       "version": "utkast 0.1"
     }
   ],

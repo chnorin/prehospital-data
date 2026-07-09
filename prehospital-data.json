@@ -13,13 +13,34 @@
       "frisör"
     ],
     "familj": [
-      "gift, två barn",
-      "ensamboende",
-      "sambo, inga barn",
-      "änka/änkling",
-      "nyskild",
-      "bor hos barnen",
-      "stor familj, många släktingar i närheten"
+      {
+        "id": "fam_ew5ao3",
+        "text": "gift, två barn"
+      },
+      {
+        "id": "fam_tm0768",
+        "text": "ensamboende"
+      },
+      {
+        "id": "fam_boxd1o",
+        "text": "sambo, inga barn"
+      },
+      {
+        "id": "fam_ybfg5b",
+        "text": "änka/änkling"
+      },
+      {
+        "id": "fam_adepny",
+        "text": "nyskild"
+      },
+      {
+        "id": "fam_xommg4",
+        "text": "bor hos barnen"
+      },
+      {
+        "id": "fam_mldexm",
+        "text": "stor familj, många släktingar i närheten"
+      }
     ],
     "bostad": [
       "villa i förorten",
@@ -62,16 +83,50 @@
       "under lätt ansträngning i trädgården",
       "under arbetet",
       "medan hen såg på tv"
-    ]
+    ],
+    "anhorig": [
+      {
+        "id": "anh_rndzf6",
+        "text": "make/maka, orolig och pratig",
+        "allowedFamiljIds": [
+          "fam_ew5ao3",
+          "fam_boxd1o"
+        ]
+      },
+      {
+        "id": "anh_vhnmn7",
+        "text": "vuxet barn, lugn men bekymrad, känner sjukdomshistorien väl",
+        "allowedFamiljIds": [
+          "fam_ew5ao3",
+          "fam_ybfg5b",
+          "fam_xommg4",
+          "fam_mldexm"
+        ]
+      },
+      {
+        "id": "anh_174ae5",
+        "text": "granne som larmat, vet lite om patienten",
+        "allowedFamiljIds": [
+          "fam_tm0768",
+          "fam_ybfg5b"
+        ]
+      },
+      {
+        "id": "anh_2jsakz",
+        "text": "förälder till ung patient, panikslagen",
+        "allowedFamiljIds": []
+      },
+      {
+        "id": "anh_04olfu",
+        "text": "släkting, känner till en del men inte allt",
+        "allowedFamiljIds": [
+          "fam_mldexm",
+          "fam_xommg4"
+        ]
+      }
+    ],
+    "anhorigChance": 30
   },
-  "ekgTypes": [
-    "Sinusrytm",
-    "ST-höjning",
-    "ST-sänkning",
-    "Förmaksflimmer",
-    "Förmaksfladder",
-    "VT"
-  ],
   "parameters": [
     {
       "key": "rr",
@@ -336,7 +391,8 @@
       "weight": 78,
       "note": "Diabetes, lätt övervikt",
       "comorbIds": [
-        "c_rqfou9"
+        "c_rqfou9",
+        "c_432ae7"
       ],
       "o2sensitive": false
     }
@@ -366,40 +422,40 @@
       ],
       "overrides": [
         {
+          "sevMin": 0,
           "key": "spo2",
           "min": 86,
-          "max": 92,
-          "sevMin": 0
+          "max": 92
         },
         {
+          "sevMin": 0,
           "key": "rr",
           "min": 24,
-          "max": 32,
-          "sevMin": 0
+          "max": 32
         },
         {
+          "sevMin": 0.4,
           "key": "hr",
           "min": 105,
-          "max": 130,
-          "sevMin": 0.4
+          "max": 130
         },
         {
+          "sevMin": 0.3,
           "key": "vas",
           "min": 3,
-          "max": 6,
-          "sevMin": 0.3
+          "max": 6
         },
         {
+          "sevMin": 0.75,
           "key": "sbp",
           "min": 80,
-          "max": 95,
-          "sevMin": 0.75
+          "max": 95
         },
         {
+          "sevMin": 0.5,
           "key": "temp",
           "min": 37.4,
-          "max": 38.2,
-          "sevMin": 0.5
+          "max": 38.2
         }
       ],
       "findings": [
@@ -462,34 +518,34 @@
       ],
       "overrides": [
         {
+          "sevMin": 0,
           "key": "vas",
           "min": 6,
-          "max": 9,
-          "sevMin": 0
+          "max": 9
         },
         {
+          "sevMin": 0.3,
           "key": "illa",
           "min": 3,
-          "max": 7,
-          "sevMin": 0.3
+          "max": 7
         },
         {
+          "sevMin": 0.4,
           "key": "hr",
           "min": 95,
-          "max": 120,
-          "sevMin": 0.4
+          "max": 120
         },
         {
+          "sevMin": 0.5,
           "key": "sbp",
           "min": 95,
-          "max": 120,
-          "sevMin": 0.5
+          "max": 120
         },
         {
+          "sevMin": 0.6,
           "key": "spo2",
           "min": 92,
-          "max": 96,
-          "sevMin": 0.6
+          "max": 96
         }
       ],
       "findings": [
@@ -531,7 +587,8 @@
       "source": "Behandlingsriktlinjer Region Stockholm",
       "reviewer": "",
       "version": "utkast 0.1",
-      "ekgFindings": []
+      "ekgFindings": [],
+      "ekg": "ST-höjning"
     },
     {
       "id": "d_kzn41y",
@@ -556,40 +613,40 @@
       ],
       "overrides": [
         {
+          "sevMin": 0,
           "key": "sbp",
           "min": 70,
-          "max": 95,
-          "sevMin": 0
+          "max": 95
         },
         {
+          "sevMin": 0.3,
           "key": "hr",
           "min": 100,
-          "max": 125,
-          "sevMin": 0.3
+          "max": 125
         },
         {
+          "sevMin": 0.4,
           "key": "gcs",
           "min": 11,
-          "max": 14,
-          "sevMin": 0.4
+          "max": 14
         },
         {
+          "sevMin": 0.2,
           "key": "illa",
           "min": 4,
-          "max": 8,
-          "sevMin": 0.2
+          "max": 8
         },
         {
+          "sevMin": 0.5,
           "key": "temp",
           "min": 37.5,
-          "max": 38.5,
-          "sevMin": 0.5
+          "max": 38.5
         },
         {
+          "sevMin": 0.5,
           "key": "glukos",
           "min": 2.5,
-          "max": 3.8,
-          "sevMin": 0.5
+          "max": 3.8
         }
       ],
       "findings": [

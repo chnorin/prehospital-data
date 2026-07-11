@@ -324,6 +324,14 @@
         }
       ],
       "ekg": "Förmaksflimmer"
+    },
+    {
+      "id": "c_zhi1t4",
+      "name": "Diabetes typ 1",
+      "distractor": false,
+      "note": "Insulinbehandlad; riskmarkör för hypo-/hyperglykemi. Inget baslinjeskift på vitalparametrar (låt det akuta fallet styra glukos).",
+      "mods": [],
+      "ekg": ""
     }
   ],
   "dispatches": [
@@ -684,6 +692,157 @@
       "source": "Behandlingsriktlinjer Region Stockholm 5.1",
       "reviewer": "",
       "version": "utkast 0.1"
+    },
+    {
+      "id": "d_6jsp9n",
+      "name": "Hypoglykemi",
+      "hiddenDx": "Hypoglykemi",
+      "system": "D",
+      "sevRange": {
+        "min": 0.4,
+        "max": 0.95
+      },
+      "rettsFloor": "",
+      "ekg": "",
+      "ekgSevMin": 0,
+      "dispatchIds": [
+        "ut_3oi4q4"
+      ],
+      "overrides": [
+        {
+          "key": "glukos",
+          "min": 1.4,
+          "max": 2.8,
+          "sevMin": 0
+        },
+        {
+          "key": "gcs",
+          "min": 4,
+          "max": 12,
+          "sevMin": 0.45
+        },
+        {
+          "key": "hr",
+          "min": 95,
+          "max": 125,
+          "sevMin": 0.2
+        }
+      ],
+      "findings": [
+        {
+          "abcde": "A",
+          "text": "Fri luftväg (bevaka vid sänkt medvetande)",
+          "by": "inspektion luftväg"
+        },
+        {
+          "abcde": "B",
+          "text": "Normal andning",
+          "by": "auskultation lungor"
+        },
+        {
+          "abcde": "C",
+          "text": "Kallsvettig, blek, takykard",
+          "by": "inspektion hud"
+        },
+        {
+          "abcde": "D",
+          "text": "Sänkt eller orolig medvetandegrad, kan vara förvirrad/aggressiv, kramper vid grav hypoglykemi",
+          "by": "bedömning medvetande"
+        },
+        {
+          "abcde": "D",
+          "text": "Lågt P-glukos",
+          "by": "kontroll P-glukos"
+        },
+        {
+          "abcde": "R",
+          "text": "Insulinbehandlad diabetes; tog insulin men åt för lite, eller ovan ansträngning/alkohol",
+          "by": "anamnes riskfaktorer"
+        }
+      ],
+      "actions": "Kontrollera P-glukos. Ge glukos i.v. vid sänkt medvetande, eller per os/buckalt om vaken och sväljer säkert; glukagon i.m. om i.v.-väg saknas. Ny glukoskontroll efter behandling.",
+      "destination": "Efter normalisering ofta kvar hemma vid trygg situation; annars akutmottagning.",
+      "forvarning": "Sällan förvarning; vid utebliven förbättring till akutmottagning.",
+      "pitfalls": "Glöm inte ny glukoskontroll efter behandling. Leta bakomliggande orsak. Hypoglykemi förekommer även utan diabetes (alkohol, sepsis, läkemedel).",
+      "source": "Behandlingsriktlinjer Region Stockholm",
+      "reviewer": "",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "d_3gt48w",
+      "name": "Opioidöverdos",
+      "hiddenDx": "Opioidöverdos/intoxikation",
+      "system": "B",
+      "sevRange": {
+        "min": 0.4,
+        "max": 0.95
+      },
+      "rettsFloor": "",
+      "ekg": "",
+      "ekgSevMin": 0,
+      "dispatchIds": [
+        "ut_3oi4q4"
+      ],
+      "overrides": [
+        {
+          "key": "rr",
+          "min": 4,
+          "max": 9,
+          "sevMin": 0
+        },
+        {
+          "key": "spo2",
+          "min": 80,
+          "max": 92,
+          "sevMin": 0.25
+        },
+        {
+          "key": "gcs",
+          "min": 3,
+          "max": 11,
+          "sevMin": 0.3
+        },
+        {
+          "key": "hr",
+          "min": 50,
+          "max": 70,
+          "sevMin": 0.4
+        }
+      ],
+      "findings": [
+        {
+          "abcde": "A",
+          "text": "Snarkande andning / risk för ofri luftväg vid djup medvetslöshet",
+          "by": "inspektion luftväg"
+        },
+        {
+          "abcde": "B",
+          "text": "Långsam, ytlig andning med låg andningsfrekvens",
+          "by": "auskultation lungor"
+        },
+        {
+          "abcde": "C",
+          "text": "Ofta lätt bradykard, i övrigt stabil cirkulation",
+          "by": "inspektion hud"
+        },
+        {
+          "abcde": "D",
+          "text": "Sänkt medvetande med små (miotiska) pupiller",
+          "by": "bedömning medvetande"
+        },
+        {
+          "abcde": "R",
+          "text": "Känt missbruk, hittad med sprutor/tabletter, nyligen utskriven opioid",
+          "by": "anamnes riskfaktorer"
+        }
+      ],
+      "actions": "Skapa fri luftväg och assistera/ventilera. Ge Naloxon titrerat och syrgas. Övervaka andningen efter Naloxon – kortare duration än många opioider, risk för återinsjuknande.",
+      "destination": "Akutmottagning för övervakning (risk för ny andningsdepression när Naloxon klingar av).",
+      "forvarning": "Förvarna vid grav andningspåverkan/hotad luftväg.",
+      "pitfalls": "Naloxon har kortare halveringstid än många opioider – patienten kan sjunka på nytt. För stor dos ger abstinens/agitation.",
+      "source": "Behandlingsriktlinjer Region Stockholm",
+      "reviewer": "",
+      "version": "utkast 0.1"
     }
   ],
   "interventions": [
@@ -699,12 +858,14 @@
         {
           "key": "vas",
           "min": -4,
-          "max": -2
+          "max": -2,
+          "conditionIds": []
         },
         {
           "key": "sbp",
           "min": -12,
-          "max": -5
+          "max": -5,
+          "conditionIds": []
         }
       ],
       "adverse": [
@@ -712,19 +873,22 @@
           "key": "rr",
           "min": -10,
           "max": -6,
-          "label": "andningsdepression"
+          "label": "andningsdepression",
+          "conditionIds": []
         },
         {
           "key": "gcs",
           "min": -4,
           "max": -2,
-          "label": "sedering"
+          "label": "sedering",
+          "conditionIds": []
         },
         {
           "key": "sbp",
           "min": -30,
           "max": -15,
-          "label": "hypotoni"
+          "label": "hypotoni",
+          "conditionIds": []
         }
       ],
       "note": "Titreras till smärtfrihet. Riktlinje: 2,5 ml (1 mg/ml) i.v., upprepas till max 20 ml.",
@@ -743,7 +907,8 @@
         {
           "key": "spo2",
           "min": 4,
-          "max": 9
+          "max": 9,
+          "conditionIds": []
         }
       ],
       "adverse": [],
@@ -763,12 +928,14 @@
         {
           "key": "sbp",
           "min": 8,
-          "max": 20
+          "max": 20,
+          "conditionIds": []
         },
         {
           "key": "hr",
           "min": -12,
-          "max": -4
+          "max": -4,
+          "conditionIds": []
         }
       ],
       "adverse": [
@@ -776,13 +943,15 @@
           "key": "spo2",
           "min": -6,
           "max": -2,
-          "label": "övervätskning/lungödem"
+          "label": "övervätskning/lungödem",
+          "conditionIds": []
         },
         {
           "key": "rr",
           "min": 2,
           "max": 5,
-          "label": "lungödem"
+          "label": "lungödem",
+          "conditionIds": []
         }
       ],
       "note": "Bolus 10 ml/kg iv, titreras mot klinik. Försiktighet vid hjärtsvikt/njursvikt/ödem.",
@@ -801,7 +970,8 @@
         {
           "key": "illa",
           "min": -6,
-          "max": -3
+          "max": -3,
+          "conditionIds": []
         }
       ],
       "adverse": [
@@ -809,7 +979,8 @@
           "key": "sbp",
           "min": -15,
           "max": -6,
-          "label": "hypotension (överdos)"
+          "label": "hypotension (överdos)",
+          "conditionIds": []
         }
       ],
       "note": "2 mg/ml, 2 ml iv (=4 mg). Försiktighet vid långt QT-syndrom (arytmirisk).",
@@ -828,12 +999,16 @@
         {
           "key": "sbp",
           "min": -20,
-          "max": -8
+          "max": -8,
+          "conditionIds": []
         },
         {
           "key": "vas",
           "min": -3,
-          "max": -1
+          "max": -1,
+          "conditionIds": [
+            "d_imvirg"
+          ]
         }
       ],
       "adverse": [
@@ -841,13 +1016,15 @@
           "key": "sbp",
           "min": -40,
           "max": -20,
-          "label": "kraftig hypotoni"
+          "label": "kraftig hypotoni",
+          "conditionIds": []
         },
         {
           "key": "hr",
           "min": 8,
           "max": 20,
-          "label": "reflextakykardi"
+          "label": "reflextakykardi",
+          "conditionIds": []
         }
       ],
       "note": "0,4 mg/dos sublingualt, 1 dos, kan upprepas om syst BT tillåter. Kontra: PDE5-hämmare senaste dygnet, hypotoni.",
@@ -868,7 +1045,8 @@
           "key": "sbp",
           "min": -20,
           "max": -8,
-          "label": "blödning (vid ockult blödning)"
+          "label": "blödning (vid ockult blödning)",
+          "conditionIds": []
         }
       ],
       "note": "5000 IE iv, ENDAST på läkarordination vid bekräftad STEMI→PCI. Kontra: aktiv blödning, heparinöverkänslighet.",
@@ -889,13 +1067,15 @@
           "key": "rr",
           "min": 3,
           "max": 8,
-          "label": "bronkospasm vid ASA-överkänslighet"
+          "label": "bronkospasm vid ASA-överkänslighet",
+          "conditionIds": []
         },
         {
           "key": "spo2",
           "min": -5,
           "max": -2,
-          "label": "bronkospasm"
+          "label": "bronkospasm",
+          "conditionIds": []
         }
       ],
       "note": "320–500 mg po vid bekräftad PCI-destination. Kontra: aktivt magsår, astma/urtikaria efter ASA/NSAID.",
@@ -914,12 +1094,18 @@
         {
           "key": "sbp",
           "min": 8,
-          "max": 20
+          "max": 20,
+          "conditionIds": [
+            "d_kzn41y"
+          ]
         },
         {
           "key": "gcs",
           "min": 1,
-          "max": 3
+          "max": 3,
+          "conditionIds": [
+            "d_kzn41y"
+          ]
         }
       ],
       "adverse": [
@@ -927,7 +1113,8 @@
           "key": "glukos",
           "min": 1,
           "max": 3,
-          "label": "hyperglykemi"
+          "label": "hyperglykemi",
+          "conditionIds": []
         }
       ],
       "note": "100 mg iv/im utan fördröjning (im endast utan venväg) + Ringer. Indikation Addisonkris. Effekten kommer gradvis.",
@@ -946,17 +1133,26 @@
         {
           "key": "rr",
           "min": 4,
-          "max": 10
+          "max": 10,
+          "conditionIds": [
+            "d_3gt48w"
+          ]
         },
         {
           "key": "gcs",
           "min": 3,
-          "max": 6
+          "max": 6,
+          "conditionIds": [
+            "d_3gt48w"
+          ]
         },
         {
           "key": "spo2",
           "min": 4,
-          "max": 9
+          "max": 9,
+          "conditionIds": [
+            "d_3gt48w"
+          ]
         }
       ],
       "adverse": [
@@ -964,19 +1160,22 @@
           "key": "hr",
           "min": 10,
           "max": 25,
-          "label": "akut abstinens/takykardi"
+          "label": "akut abstinens/takykardi",
+          "conditionIds": []
         },
         {
           "key": "illa",
           "min": 3,
           "max": 6,
-          "label": "abstinens/illamående"
+          "label": "abstinens/illamående",
+          "conditionIds": []
         },
         {
           "key": "sbp",
           "min": 8,
           "max": 20,
-          "label": "hypertoni"
+          "label": "hypertoni",
+          "conditionIds": []
         }
       ],
       "note": "0,4 mg/ml, titrera till adekvat andning. Effekt inom ~2 min iv. OBS kortare halveringstid än opioider → re-narkotisering.",
@@ -995,12 +1194,14 @@
         {
           "key": "spo2",
           "min": 2,
-          "max": 5
+          "max": 5,
+          "conditionIds": []
         },
         {
           "key": "rr",
           "min": -4,
-          "max": -1
+          "max": -1,
+          "conditionIds": []
         }
       ],
       "adverse": [],
@@ -1020,12 +1221,14 @@
         {
           "key": "spo2",
           "min": 3,
-          "max": 7
+          "max": 7,
+          "conditionIds": []
         },
         {
           "key": "rr",
           "min": -6,
-          "max": -2
+          "max": -2,
+          "conditionIds": []
         }
       ],
       "adverse": [
@@ -1033,17 +1236,108 @@
           "key": "hr",
           "min": 12,
           "max": 30,
-          "label": "takykardi/palpitationer"
+          "label": "takykardi/palpitationer",
+          "conditionIds": []
         },
         {
           "key": "glukos",
           "min": 1,
           "max": 3,
-          "label": "hyperglykemi"
+          "label": "hyperglykemi",
+          "conditionIds": []
         }
       ],
       "note": "OBS Stockholm-styrka 2 mg/ml, 5 ml (=10 mg) i nebulisator, ofta med ipratropium. Kan upprepas efter 10–20 min.",
       "source": "Behandlingsriktlinjer Region Stockholm (Preparathandbok 2026_06)",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_to30qx",
+      "name": "Glukagon",
+      "route": "i.m.",
+      "unitLabel": "mg",
+      "recommendedDose": 1,
+      "maxDose": 2,
+      "step": 1,
+      "therapeutic": [
+        {
+          "key": "glukos",
+          "min": 2,
+          "max": 4,
+          "conditionIds": []
+        },
+        {
+          "key": "gcs",
+          "min": 3,
+          "max": 6,
+          "conditionIds": []
+        }
+      ],
+      "adverse": [
+        {
+          "key": "illa",
+          "min": 2,
+          "max": 4,
+          "label": "illamående/kräkning",
+          "conditionIds": []
+        }
+      ],
+      "note": "Ges i.m. när i.v.-väg saknas. Verkar långsammare än i.v. glukos och kräver glykogendepåer (sämre effekt vid svält/alkohol). Illamående vanligt.",
+      "source": "Behandlingsriktlinjer Region Stockholm",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_l3frsh",
+      "name": "Glukos 300 mg/ml",
+      "route": "i.v.",
+      "unitLabel": "ml",
+      "recommendedDose": 30,
+      "maxDose": 100,
+      "step": 10,
+      "therapeutic": [
+        {
+          "key": "glukos",
+          "min": 3,
+          "max": 6,
+          "conditionIds": []
+        },
+        {
+          "key": "gcs",
+          "min": 4,
+          "max": 8,
+          "conditionIds": []
+        }
+      ],
+      "adverse": [],
+      "note": "Stark glukoslösning i.v. med snabb effekt. Ge i stort kärl – risk för kärlretning/vävnadsskada vid extravasation.",
+      "source": "Behandlingsriktlinjer Region Stockholm",
+      "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_9i724s",
+      "name": "Glukos 100 mg/ml",
+      "route": "i.v.",
+      "unitLabel": "ml",
+      "recommendedDose": 100,
+      "maxDose": 250,
+      "step": 50,
+      "therapeutic": [
+        {
+          "key": "glukos",
+          "min": 3,
+          "max": 6,
+          "conditionIds": []
+        },
+        {
+          "key": "gcs",
+          "min": 4,
+          "max": 8,
+          "conditionIds": []
+        }
+      ],
+      "adverse": [],
+      "note": "Svagare glukoslösning, större volym, skonsammare mot kärlen. Vanlig som infusion.",
+      "source": "Behandlingsriktlinjer Region Stockholm",
       "version": "utkast 0.1"
     }
   ],

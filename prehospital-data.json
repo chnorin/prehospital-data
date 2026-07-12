@@ -508,7 +508,9 @@
         "{namn}, {ålder} år, har blivit alltmer andfådd sedan {sedan}. Andas ytligt.",
         "{ålder}-årig {kön} med andnöd som kom smygande {sedan}. {hanhon} klarar knappt att gå.",
         "Patient med tilltagande andfåddhet och bröstsmärta vid djupandning sedan {sedan}."
-      ]
+      ],
+      "deteriorationRate": 0.008,
+      "treatmentStops": true
     },
     {
       "id": "d_imvirg",
@@ -610,7 +612,9 @@
         "{namn}, {ålder} år, fick plötslig bröstsmärta {aktivitet} vid {tid}. Smärtan sitter kvar och {hanhon} mår illa.",
         "Man i {ålder}-årsåldern med tryck över bröstet sedan {sedan}. Kallsvettig, blek.",
         "{ålder}-årig {kön} med central bröstsmärta som debuterade {aktivitet} {sedan}. Vaken, orolig."
-      ]
+      ],
+      "deteriorationRate": 0.006,
+      "treatmentStops": true
     },
     {
       "id": "d_kzn41y",
@@ -711,7 +715,9 @@
       "briefTemplates": [
         "{namn}, {ålder} år, har mått allt sämre sedan {sedan} – trött, illamående, orkeslös.",
         "{ålder}-årig {kön} som försämrats gradvis sedan {sedan}. Kräkts, mycket medtagen."
-      ]
+      ],
+      "deteriorationRate": 0.004,
+      "treatmentStops": true
     },
     {
       "id": "d_6jsp9n",
@@ -793,7 +799,9 @@
         "{namn}, {ålder} år, hittad förvirrad och kallsvettig {sedan}.",
         "Anhörig larmar: {ålder}-årig {kön} blev plötsligt underlig i beteendet {aktivitet} vid {tid}.",
         "Diabetiker som blivit svårkontaktbar sedan {sedan}. Kallsvettig."
-      ]
+      ],
+      "deteriorationRate": 0.01,
+      "treatmentStops": true
     },
     {
       "id": "d_3gt48w",
@@ -876,7 +884,9 @@
         "{namn}, {ålder} år, hittad svårväckt {sedan}.",
         "{ålder}-årig {kön} anträffad medvetandesänkt med långsam andning, sedan {sedan}.",
         "Larm om person som inte går att väcka, upptäckt vid {tid}."
-      ]
+      ],
+      "deteriorationRate": 0.012,
+      "treatmentStops": true
     }
   ],
   "interventions": [

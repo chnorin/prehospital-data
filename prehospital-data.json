@@ -587,11 +587,6 @@
           "by": "inspektion hud"
         },
         {
-          "abcde": "C",
-          "text": "ST-höjning på 12-avledningar",
-          "by": "12-avl EKG"
-        },
-        {
           "abcde": "R",
           "text": "Rökning, hypertoni, diabetes, hereditet",
           "by": "anamnes riskfaktorer"
@@ -619,7 +614,8 @@
         "{ålder}-årig {kön} med central bröstsmärta som debuterade {aktivitet} {sedan}. Vaken, orolig."
       ],
       "deteriorationRate": 0.006,
-      "treatmentStops": true
+      "treatmentStops": true,
+      "ekgSevMin": 0.5
     },
     {
       "id": "d_kzn41y",
@@ -1108,7 +1104,9 @@
           "min": -20,
           "max": -8,
           "label": "blödning (vid ockult blödning)",
-          "conditionIds": []
+          "conditionIds": [
+            "d_imvirg"
+          ]
         }
       ],
       "note": "5000 IE iv, ENDAST på läkarordination vid bekräftad STEMI→PCI. Kontra: aktiv blödning, heparinöverkänslighet.",
@@ -1401,6 +1399,30 @@
       "note": "Svagare glukoslösning, större volym, skonsammare mot kärlen. Vanlig som infusion.",
       "source": "Behandlingsriktlinjer Region Stockholm",
       "version": "utkast 0.1"
+    },
+    {
+      "id": "iv_3telby",
+      "name": "Ticagrelor (Brilique)",
+      "route": "p.o.",
+      "unitLabel": "mg",
+      "recommendedDose": 180,
+      "maxDose": 180,
+      "step": 90,
+      "therapeutic": [],
+      "adverse": [
+        {
+          "key": "rr",
+          "min": 1,
+          "max": 3,
+          "label": "dyspné",
+          "conditionIds": [
+            "d_imvirg"
+          ]
+        }
+      ],
+      "note": "Bolusdos 90 mg × 2 tabl p.o. (=180 mg). ENDAST efter läkarordination vid beslut om primär PCI. Kontraindikation: pågående blödning, tidigare intrakraniell blödning, svår leversvikt, pågående NOAK/warfarin. Ingen omedelbar effekt på vitalparametrar prehospitalt.",
+      "source": "Behandlingsriktlinjer Region Stockholm 2026 + Preparathandbok",
+      "version": "1.0"
     }
   ],
   "retts": {

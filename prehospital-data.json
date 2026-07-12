@@ -595,6 +595,11 @@
           "abcde": "R",
           "text": "Rökning, hypertoni, diabetes, hereditet",
           "by": "anamnes riskfaktorer"
+        },
+        {
+          "abcde": "B",
+          "text": "slanka underben",
+          "by": "inspektion underben"
         }
       ],
       "actions": "ASA, nitro (om ej kontraindikation), smärtlindring, syrgas vid hypoxi, 12-avl EKG, PCI-förvarning",

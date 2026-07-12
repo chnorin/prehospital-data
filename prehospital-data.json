@@ -503,7 +503,7 @@
       "version": "utkast 0.1",
       "ekgFindings": [],
       "debutMin": 60,
-      "debutMax": 600,
+      "debutMax": 120,
       "briefTemplates": [
         "{namn}, {ålder} år, har blivit alltmer andfådd sedan {sedan}. Andas ytligt.",
         "{ålder}-årig {kön} med andnöd som kom smygande {sedan}. {hanhon} klarar knappt att gå.",
@@ -910,6 +910,12 @@
           "min": -12,
           "max": -5,
           "conditionIds": []
+        },
+        {
+          "key": "illa",
+          "min": 0,
+          "max": 6,
+          "conditionIds": []
         }
       ],
       "adverse": [
@@ -932,6 +938,13 @@
           "min": -30,
           "max": -15,
           "label": "hypotoni",
+          "conditionIds": []
+        },
+        {
+          "key": "rr",
+          "min": 0,
+          "max": 0,
+          "label": "",
           "conditionIds": []
         }
       ],

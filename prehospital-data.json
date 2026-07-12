@@ -401,7 +401,8 @@
         "c_rqfou9",
         "c_432ae7"
       ],
-      "o2sensitive": false
+      "o2sensitive": false,
+      "pins": {}
     }
   ],
   "conditions": [
@@ -500,7 +501,14 @@
       "source": "Behandlingsriktlinjer Region Stockholm",
       "reviewer": "",
       "version": "utkast 0.1",
-      "ekgFindings": []
+      "ekgFindings": [],
+      "debutMin": 60,
+      "debutMax": 600,
+      "briefTemplates": [
+        "{namn}, {ålder} år, har blivit alltmer andfådd sedan {sedan}. Andas ytligt.",
+        "{ålder}-årig {kön} med andnöd som kom smygande {sedan}. {hanhon} klarar knappt att gå.",
+        "Patient med tilltagande andfåddhet och bröstsmärta vid djupandning sedan {sedan}."
+      ]
     },
     {
       "id": "d_imvirg",
@@ -595,7 +603,14 @@
       "reviewer": "",
       "version": "utkast 0.1",
       "ekgFindings": [],
-      "ekg": "ST-höjning"
+      "ekg": "ST-höjning",
+      "debutMin": 20,
+      "debutMax": 90,
+      "briefTemplates": [
+        "{namn}, {ålder} år, fick plötslig bröstsmärta {aktivitet} vid {tid}. Smärtan sitter kvar och {hanhon} mår illa.",
+        "Man i {ålder}-årsåldern med tryck över bröstet sedan {sedan}. Kallsvettig, blek.",
+        "{ålder}-årig {kön} med central bröstsmärta som debuterade {aktivitet} {sedan}. Vaken, orolig."
+      ]
     },
     {
       "id": "d_kzn41y",
@@ -690,7 +705,13 @@
       "pitfalls": "Ge inte bara vätska – kortisolsvikt kräver hydrokortison. Krisen kan vara debut vid odiagnosticerad Addison.",
       "source": "Behandlingsriktlinjer Region Stockholm 5.1",
       "reviewer": "",
-      "version": "utkast 0.1"
+      "version": "utkast 0.1",
+      "debutMin": 360,
+      "debutMax": 2880,
+      "briefTemplates": [
+        "{namn}, {ålder} år, har mått allt sämre sedan {sedan} – trött, illamående, orkeslös.",
+        "{ålder}-årig {kön} som försämrats gradvis sedan {sedan}. Kräkts, mycket medtagen."
+      ]
     },
     {
       "id": "d_6jsp9n",
@@ -765,7 +786,14 @@
       "pitfalls": "Glöm inte ny glukoskontroll efter behandling. Leta bakomliggande orsak. Hypoglykemi förekommer även utan diabetes (alkohol, sepsis, läkemedel).",
       "source": "Behandlingsriktlinjer Region Stockholm",
       "reviewer": "",
-      "version": "utkast 0.1"
+      "version": "utkast 0.1",
+      "debutMin": 15,
+      "debutMax": 120,
+      "briefTemplates": [
+        "{namn}, {ålder} år, hittad förvirrad och kallsvettig {sedan}.",
+        "Anhörig larmar: {ålder}-årig {kön} blev plötsligt underlig i beteendet {aktivitet} vid {tid}.",
+        "Diabetiker som blivit svårkontaktbar sedan {sedan}. Kallsvettig."
+      ]
     },
     {
       "id": "d_3gt48w",
@@ -841,7 +869,14 @@
       "pitfalls": "Naloxon har kortare halveringstid än många opioider – patienten kan sjunka på nytt. För stor dos ger abstinens/agitation.",
       "source": "Behandlingsriktlinjer Region Stockholm",
       "reviewer": "",
-      "version": "utkast 0.1"
+      "version": "utkast 0.1",
+      "debutMin": 15,
+      "debutMax": 180,
+      "briefTemplates": [
+        "{namn}, {ålder} år, hittad svårväckt {sedan}.",
+        "{ålder}-årig {kön} anträffad medvetandesänkt med långsam andning, sedan {sedan}.",
+        "Larm om person som inte går att väcka, upptäckt vid {tid}."
+      ]
     }
   ],
   "interventions": [
